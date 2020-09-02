@@ -1,16 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>想你的日记</title>
-</head>
-<body>
-    <div>这里会记录一些我的内心小想法，和一些可能永远也不会当面和你说的话，总之，欢迎你发现这里，有空记得来看看！~<div>
-    <br>
-    <div>（9.1）有件事一直没和你说，这么长时间了，很多时候我都会有一些无力感，那种我很想要很努力的让我们的关系更亲密一些、想要从你那里获得更多的安全感和真实感时，你似有若无的不在意，让我觉得既无奈又无力，如果哪天你能知道这一点并作出一些什么，该有多好。<div/>
-    <br>
-    <div>（9.1）下午下了阵雨，突然变冷了好多，和你说感觉好冷，你和我说“是啊”，于是想告诉你今天拉了几次肚子吃不下东西的话也只有憋在嘴边了。突然想起来，整整一个八月你都没问过我“在干嘛”了，以前从来不会这样。和你说过了，我是一个在乎细节的人，也是一个比较敏感的人，想起一句歌词来，“爱着为什么不说呢”，我想和你说的是“爱着为什么不能让我切切实实的感受到呢”</div>
-    <br>
-    <div>(9.2)吃午饭的时候，忘拿口罩了，买到了两个素菜，想你，拍了照给你。但还是觉得无奈，有的时候我觉得你其实并不是不会聊天，只是不想和我聊天而已。就像很久以前和你说的分享日常，我曾经以为你只是不擅长分享，和你说的不喜欢在微信上一直聊天一样，但那天在北门你拍了照片马上就发给“朋友”了，当时我多希望我也是你“朋友”的一员，至少能和你好好的聊聊天。因为你是我喜欢的人，所以我没办法不和你聊天说话分享看见的东西，要是你能明白这一点该多好啊。</div>
-</body>
-</html>
+    <html>
+       <script Language="JavaScript">
+         function GookieVal(offset)     
+  //获得Cookie解码后的值 
+          {
+           var endstr = document.cookie.
+indexOf (";", offset);
+           if (endstr == -1)
+            endstr = document.cookie.length;
+          return unescape(document.cookie.
+substring(offset, endstr));
+          }
+         function Gookie(name) 
+ //获得Cookie的原始值
+          { var arg = name + "=";
+            var alen = arg.length;
+            var clen = document.cookie.length;
+            var i = 0;
+            while (i <  clen)
+            {
+                  var j = i + alen;
+                  if (document.cookie.
+substring(i, j) == arg)
+                  return GookieVal (j);
+            i = document.cookie.indexOf(" ", i) + 1;
+            if (i == 0) break;
+            }
+            return null;
+          }
+     function Sookie(name, value)     
+  //设定Cookie值
+          { var argv = Sookie.arguments;
+            var argc = Sookie.arguments.length;
+            var expires = (argc  > 2) ? argv[2] : null;
+            var path = (argc  > 3) ? argv[3] : null;
+            var domain = (argc  > 4) ? argv[4] : null;
+            var secure = (argc  > 5) ? argv[5] : false;
+            document.cookie = name + "=" + 
+escape (value) +((expires == null) ?
+            "" : ("; expires="+ expires.toGMTString()))
+ +((path == null) ? "" : 
+            ("; path=" + path)) +((domain == null) ? ""
+ : ("; domain=" + domain))
+            +((secure == true) ? "; secure" : "");
+          }
+     function Dookie(name)
+          { var exp = new Date();
+            exp.setTime (exp.getTime() - 1);
+            var cval = Gookie (name);
+            document.cookie = name + "=" + cval + "; 
+expires="+ exp.toGMTString();
+          }
+      </script>
+      <script>
+        var expdate = new Date();
+        expdate.setTime(expdate.getTime() + 
+(24 * 60 * 60 * 1000 * 365));
+        if(!(visits = Gookie("3wave"))) 
+          { visits = 1;
+     Sookie("3wave", visits, expdate, "/", null, false);
+      document.write("这是您第" + visits + "次光临本站");}
+      else{ visits++; 
+          Sookie("3wave", visits, expdate, "/", null, false);
+       document.write("您已经第" + visits + "次光临小站");
+                  } 
+        if(visits< 2)
+       document.write(",是小站的新手上路，加油哦。")
+        if(visits >=2&&visits< 4)
+     document.write(",是小站的初级站友，不错嘛。")  
+        if(visits >=4&&visits< 6)
+     document.write(",是小站的高级站友，很厉害啊！")  
+        if(visits >=6)
+     document.write(",是小站的支柱，我实在太感动了！")   
+      </script>
+      </html>
